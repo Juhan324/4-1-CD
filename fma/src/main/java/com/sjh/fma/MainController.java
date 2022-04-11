@@ -1,4 +1,4 @@
-package com.sjh.fmt;
+package com.sjh.fma;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
