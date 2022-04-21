@@ -7,9 +7,7 @@ import com.sjh.fma.service.UserService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
@@ -20,7 +18,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping("/users")
+    @PostMapping("/users")
     public String AllUser(Model model) {
         List<User> allUser = userService.getAllUsers();
         model.addAttribute("userlist", allUser);

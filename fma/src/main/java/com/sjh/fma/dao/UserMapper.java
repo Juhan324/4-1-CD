@@ -16,7 +16,7 @@ public interface UserMapper {
     List<User> findAll();
 
     @Select("SELECT * FROM user WHERE id = #{id}")
-    User findByUserIdx(@Param("id") int id);
+    User findByUserId(@Param("id") String id);
 
     @Insert("INSERT INTO user(id,pw,name) VALUES(#{id}, #{pw}, #{name}")
     void insertUser(@Param("user") User user);
