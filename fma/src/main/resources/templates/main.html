@@ -2,9 +2,36 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link th:href="@{/css/main.css}" rel="stylesheet" type="text/css"/>
 <title>main</title>
 </head>
 <body>
-main
+<div class="container">
+<header id = "topMenu" align="right">
+        <a class="topLink" href="#">관리자 로그인</a>
+        <button class="testBtn">TEST</button>
+        <button class="runBtn">RUN</button>
+</header>
+<main>
+    <div class="main-left">
+        <div class="main-left-btn">
+            <button class="btn-auto">자동</button>
+            <button class="btn-manual">수동</button>
+        </div>
+        <div class="main-left-component">
+            <div class="component-top">Detail Controller</div>
+            <div class="component-bottom">
+                <div>
+                    <button class="btn-execution">STOP</button>
+                </div>
+                <input type="text" class="inp-detail"/>
+            </div> 
+        </div>
+    </div>
+    <div class="main-right">
+        <div class="result-value"></div>
+    </div>
+</main>
+</div>
 </body>
 </html>
