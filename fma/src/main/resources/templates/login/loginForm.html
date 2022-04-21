@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   	<!-- layout Content -->
+	<th:block layout:fragment="content">
+	    <div><h3>Login</h3></div>
+	        <div>
+	            <form id="frm" name="frm" action="/login/action" method="post">
+	                <div>
+						<input name="id" type="text" placeholder="ID" required />
+	                </div>
+	                <div>
+	                    <input name="pw" type="password" placeholder="Password" required />
+	                </div>
+	                <div>
+                    	<input type="submit" value="로그인"/>
+	                </div>
+	            </form>
+				<form action="/login/signin" method="post">
+					<input type="submit" value="회원가입"/>
+				</form>
+	        </div>
+	    </div>
+	</th:block>
+</html>

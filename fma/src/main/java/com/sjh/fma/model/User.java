@@ -9,7 +9,11 @@ import lombok.Data;
 @AllArgsConstructor
 public class User {
     private String id;
-    private int pw;
+    private String pw;
     private String name;
     private String auth;
+
+    public boolean matchPassword(String pw){
+        return this.getPw().equals(pw);
+    }
 }
