@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -24,13 +24,14 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @RequestMapping()
-	public String getLoginPage(Model model,
-			@RequestParam(value = "error", required = false) String error, 
-			@RequestParam(value = "exception", required = false) String exception) {
-		model.addAttribute("error", error);
-		model.addAttribute("exception", exception);
-		return "/login/loginForm";
+    @RequestMapping
+	public String getLoginPage(@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) User user,
+            Model model) {
+        if(user == null){
+            return "/login/loginForm";
+        }else {
+            return "main";
+        }
 	}
     
     @PostMapping("/action")
