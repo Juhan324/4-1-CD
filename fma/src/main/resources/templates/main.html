@@ -8,11 +8,13 @@
 <body>
 <div class="container">
 <header id = "topMenu" align="right">
-        <a class="topLink" href="#">관리자 로그인</a>
-        <button class="testBtn">TEST</button>
-        <button class="runBtn">RUN</button>
+        <span>FMA PROJECT</span>
+        <button class="topLink" onclick="location.href='login'">관리자 로그인</button>
+        <button class="logout" onclick="location.href='login/logout'">로그아웃</button>
+
 </header>
-<main>
+
+<main th:if="${session.loginMember.getAuth() != 'null'}">
     <div class="main-left">
         <div class="main-left-btn">
             <button class="btn-auto">자동</button>
@@ -29,8 +31,13 @@
         </div>
     </div>
     <div class="main-right">
+        <div class="main-right-btn">
+        <button class="testBtn">TEST</button>
+        <button class="runBtn">RUN</button>
+    </div>
         <div class="result-value"></div>
     </div>
 </main>
+
 </body>
 </html>

@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
    	<!-- layout Content -->
-	<th:block layout:fragment="content">
-	    <div><h3>Login</h3></div>
+	<head>
+		<style>
+			body {
+				background-image: url("../image/robot-g4489e9f3f_1920.jpg");
+			}
+			input[type=text] {
+				width:200px;
+  				height:30px;
+  				font-size:20px;
+			}
+			input[type=password] {
+				width:200px;
+  				height:30px;
+  				font-size:20px;
+			}
+			input[type=submit] {
+				width:100px;
+  				height:30px;
+  				font-size:20px;
+			}
+			div{
+				padding-top: 10px;
+			}
+			body{
+				padding-top: 150px;
+			}
+		</style>
+	</head>
+	<body>
+	<div align="center">
+	<th:block layout:fragment="content" align="center">
+	    <div><h1>Login</h1></div>
 	        <div>
 	            <form id="frm" name="frm" action="/login/action" method="post">
 	                <div>
@@ -15,10 +45,10 @@
                     	<input type="submit" value="로그인"/>
 	                </div>
 	            </form>
-				<form action="/login/signin" method="post">
-					<input type="submit" value="회원가입"/>
-				</form>
+				<br><br><br>
+				<h3>로그인을 하시면 관리자 페이지로 이동합니다.</h3>
 	        </div>
-	    </div>
 	</th:block>
+	</div>
+</body>
 </html>
