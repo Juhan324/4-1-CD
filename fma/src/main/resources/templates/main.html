@@ -14,8 +14,8 @@
 
 </header>
 
-<main th:if="${session.loginMember.getAuth() != 'null'}">
-    <div class="main-left">
+<main >
+    <div class="main-left" th:if="${session.loginMember != null}">
         <div class="main-left-btn">
             <button class="btn-auto">자동</button>
             <button class="btn-manual">수동</button>
@@ -30,7 +30,7 @@
             </div> 
         </div>
     </div>
-    <div class="main-right">
+    <div class="main-right" th:if="${session.loginMember != null}">
         <div class="main-right-btn">
         <button class="testBtn">TEST</button>
         <button class="runBtn">RUN</button>
