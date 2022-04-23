@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("login")
 public class LoginController {
 
     LoginService loginService;
@@ -30,27 +30,27 @@ public class LoginController {
         if(user == null){
             return "/login/loginForm";
         }else {
-            return "redirect:";
+            return "redirect:/main";
         }
 	}
     
-    @PostMapping("/action")
+    @PostMapping("action")
     public String checkLogin(LoginForm loginForm, HttpServletRequest request) {
         User user = loginService.login(loginForm);
         if(user!=null){
             HttpSession session = request.getSession();
             session.setAttribute(SessionConstants.LOGIN_MEMBER, user);
-            return "redirect:";
+            return "redirect:/main";
         } else{
-            return "login/loginForm";
+            return "redirect:/login";
         }
     }
-    @RequestMapping("/logout")
+    @RequestMapping("logout")
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();   // 세션 날림
         }
-        return "redirect:";
+        return "login/logout";
     }
 }
