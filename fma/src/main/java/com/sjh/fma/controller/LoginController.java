@@ -30,7 +30,7 @@ public class LoginController {
         if(user == null){
             return "/login/loginForm";
         }else {
-            return "main";
+            return "redirect:";
         }
 	}
     
@@ -40,7 +40,7 @@ public class LoginController {
         if(user!=null){
             HttpSession session = request.getSession();
             session.setAttribute(SessionConstants.LOGIN_MEMBER, user);
-            return "redirect:/";
+            return "redirect:";
         } else{
             return "login/loginForm";
         }
@@ -51,6 +51,6 @@ public class LoginController {
         if (session != null) {
             session.invalidate();   // 세션 날림
         }
-        return "redirect:/";
+        return "redirect:";
     }
 }
