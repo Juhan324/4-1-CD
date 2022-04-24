@@ -20,4 +20,9 @@ public class HardwareService {
         final List<Hardware> hardwareList = hardwareMapper.findAll();
         return hardwareList;
     }
+
+    public void insertHardware(int speed, int error, int output){
+    	Hardware hardware = new Hardware(speed, error, output);
+    	hardwareMapper.insertData(hardware);
+    }
 }
