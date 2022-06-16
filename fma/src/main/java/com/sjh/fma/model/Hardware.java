@@ -14,6 +14,7 @@ public class Hardware {
         this.output=output;
     }
     private int id;
+    private Date time;
     private int speed;
     private int error;
     private int output;
