@@ -14,6 +14,6 @@ public interface HardwareMapper {
     @Select("SELECT * FROM hardware")
     List<Hardware> findAll();
 
-    @Insert("INSERT INTO hardware(time,speed,error,output) VALUES(now(),#{data.speed}, #{data.error}, #{data.output})")
+    @Insert("INSERT INTO hardware(speed,error,output) VALUES(#{data.speed}, #{data.error}, #{data.output})")
     void insertData(@Param("data") Hardware data);
 }
