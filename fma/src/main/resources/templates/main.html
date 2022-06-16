@@ -10,6 +10,12 @@
 <header id = "topMenu" align="right">
         <span>FMA PROJECT</span>
         <button class="topLink" onclick="location.href='login'" th:if="${session.loginMember == null}">관리자 로그인</button>
+         <div th:if="${session.loginMember != null}">
+           <form action="users" method="post"> <button class="user" th:if="${session.loginMember.auth=='admin'}">회원관리</button></form>
+         </br>
+           <form action="hardware" method="post"><button class="data" th:if="${session.loginMember.auth=='admin'}">데이터조회</button></form>
+        </div>
+    </br>
         <button class="logout" onclick="location.href='login/logout'" th:if="${session.loginMember != null}">로그아웃</button>
 
 </header>
