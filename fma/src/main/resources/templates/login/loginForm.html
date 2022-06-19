@@ -21,6 +21,11 @@
   				height:30px;
   				font-size:20px;
 			}
+			button {
+				width:100px;
+  				height:30px;
+  				font-size:20px;
+			}
 			div{
 				padding-top: 10px;
 			}
@@ -43,10 +48,11 @@
 	                </div>
 	                <div>
                     	<input type="submit" value="로그인"/>
+						<button class="topLink" onclick="location.href='register'" th:if="${session.loginMember == null}">회원가입</button>
 	                </div>
 	            </form>
 				<br><br><br>
-				<h3>로그인을 하시면 관리자 페이지로 이동합니다.</h3>
+				<h3>로그인을 하시면 메인페이지로 이동합니다.</h3>
 	        </div>
 	</th:block>
 	</div>
