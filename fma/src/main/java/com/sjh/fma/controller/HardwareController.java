@@ -7,6 +7,7 @@ import com.sjh.fma.service.HardwareService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,7 +20,7 @@ public class HardwareController {
         this.hardwareService = hardwareService;
     }
 
-    @PostMapping(value="/hardware")
+    @GetMapping("/hardware")
     public String AllHardware(Model model) {
         List<Hardware> allHardware = hardwareService.getAllHardwares();
         model.addAttribute("hardwarelist", allHardware);
