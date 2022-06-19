@@ -22,7 +22,7 @@ public class RegisterController {
     @RequestMapping("register/action")
     public String register(RegisterForm registerForm){
         if(registerSerivce.register(registerForm)){
-            return "redirect:main";
+            return "redirect:/login";
         }else{
             return "register";
         }
