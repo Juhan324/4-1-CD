@@ -28,7 +28,7 @@ public class LoginController {
 	public String getLoginPage(@SessionAttribute(name = SessionConstants.LOGIN_MEMBER, required = false) User user,
             Model model) {
         if(user == null){
-            return "/login/loginForm";
+            return "login/loginForm";
         }else {
             return "redirect:/main";
         }
