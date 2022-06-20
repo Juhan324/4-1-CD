@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   	<!-- layout Content -->
+	<head>
+		<style>
+			body {
+				background-image: url("../image/robot-g4489e9f3f_1920.jpg");
+			}
+			input[type=text] {
+				width:200px;
+  				height:30px;
+  				font-size:20px;
+			}
+			input[type=password] {
+				width:200px;
+  				height:30px;
+  				font-size:20px;
+			}
+			input[type=submit] {
+				width:100px;
+  				height:30px;
+  				font-size:20px;
+			}
+			div{
+				padding-top: 10px;
+			}
+			body{
+				padding-top: 150px;
+			}
+		</style>
+	</head>
+	<body>
+	<div align="center">
+	<th:block layout:fragment="content" align="center">
+	    <div><h1>Register</h1></div>
+	        <div>
+	            <form id="frm" name="frm" action="/register/action" method="post">
+	                <div>
+						<input name="id" type="text" placeholder="ID" required />
+	                </div>
+	                <div>
+	                    <input name="pw" type="password" placeholder="Password" required />
+	                </div>
+					<div>
+	                    <input name="pwCheck" type="password" placeholder="Password Check" required />
+	                </div>
+					<div>
+						<input name="name" type="text" placeholder="Name" required />
+					</div>
+	                <div>
+                    	<input type="submit" value = "회원가입"/>
+	                </div>
+	            </form>
+				<br><br><br>
+				<h3>회원가입을 하시면 메인페이지로 이동합니다.</h3>
+	        </div>
+	</th:block>
+	</div>
+</body>
+</html>

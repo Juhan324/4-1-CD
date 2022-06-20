@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/hardware.css}" rel="stylesheet" type="text/css">
+    <title>데이터 목록</title>
+</head>
+<body align="center">
+    <h1>데이터 테이블</h1>
+    <table align="center" width="400px" height="100px">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>speed</th>
+                <th>error</th>
+                <th>output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="data : ${hardwarelist}">
+                <td><span th:text="${data.id}"></span></td>
+                <td><span th:text="${data.speed}"></span></td>
+                <td><span th:text="${data.error}"></span></td>
+                <td><span th:text="${data.output}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

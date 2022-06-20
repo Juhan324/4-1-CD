@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/users.css}" rel="stylesheet" type="text/css">
+    <title>회원 목록</title>
+</head>
+<body align="center">
+    <h1>회원 목록 테이블</h1>
+    <table align="center" width="400px" height="100px">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>pw</th>
+                <th>name</th>
+                <th>auth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${userlist}">
+                <td><span th:text="${user.id}"></span></td>
+                <td><span th:text="${user.pw}"></span></td>
+                <td><span th:text="${user.name}"></span></td>
+                <td><span th:text="${user.auth}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <form>
+    </br>
+        <button type="submit" formaction="/">메인으로</button>
+    </form>
+</body>
+</html>

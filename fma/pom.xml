@@ -9,10 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sjh</groupId>
-	<artifactId>fmt</artifactId>
+	<artifactId>fma</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>fmt</name>
+	<name>fma</name>
 	<description>Factory Management Automation System</description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
